@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniOptimus | Smart Campus Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <div class="logo">
+            <h2>🚀 UniOptimus</h2>
+            <p>Campus Optimization Engine</p>
+        </div>
+        <nav>
+            <button type="button" class="nav-btn" onclick="showSection('registry')">📘 Student Registry</button>
+            <button type="button" class="nav-btn" onclick="showSection('navigation')">🗺 Campus Navigation</button>
+            <button type="button" class="nav-btn" onclick="showSection('scheduler')">📅 Task Scheduler</button>
+            <button type="button" class="nav-btn" onclick="showSection('network')">🌐 Network Analysis</button>
+        </nav>
+    </div>
+
+    <div class="content">
+
+        <div id="registry" class="card">
+            <h2>Student Registry</h2>
+            <div class="input-group">
+                <input type="number" id="studentId" placeholder="Enter Student ID">
+                <input type="text" id="studentName" placeholder="Enter Full Name">
+                <button type="button" onclick="addStudent()">Add Student</button>
+            </div>
+            <hr>
+            <div class="input-group">
+                <input type="number" id="searchId" placeholder="Search by ID">
+                <button type="button" class="action-btn search" onclick="searchStudent()">Search</button>
+            </div>
+            <div class="output" id="registryOutput">Ready for input...</div>
+        </div>
+
+        <div id="navigation" class="card hidden">
+            <h2>Campus Shortest Path</h2>
+            <div class="input-group">
+                <label>From:</label>
+                <select id="src"></select>
+                <label>To:</label>
+                <select id="dst"></select>
+                <button type="button" class="action-btn" onclick="findPath()">Find Quickest Path</button>
+            </div>
+            <div class="output" id="navOutput">Path will appear here...</div>
+        </div>
+
+        <div id="scheduler" class="card hidden">
+            <h2>Activity Scheduler</h2>
+            <div class="input-group">
+                <input type="text" id="taskName" placeholder="Task Name">
+                <input type="number" id="startTime" placeholder="Start Hour (e.g. 9)">
+                <input type="number" id="endTime" placeholder="End Hour (e.g. 10)">
+                <button type="button" class="action-btn" onclick="addTask()">Add Task</button>
+                <button type="button" class="action-btn optimize" onclick="optimizeSchedule()">Optimize Schedule</button>
+            </div>
+            <div class="output" id="scheduleOutput">Queue is empty.</div>
+        </div>
+
+        <div id="network" class="card hidden">
+            <h2>Infrastructure Optimization</h2>
+            <div class="input-group">
+                
+                <select id="node1">
+                    <option value="" disabled selected>Select Node U...</option>
+                    <option value="0">MainGate</option>
+                    <option value="1">CS_Block</option>
+                    <option value="2">Library</option>
+                    <option value="3">Hostel</option>
+                    <option value="4">Cafeteria</option>
+                </select>
+
+                <select id="node2">
+                    <option value="" disabled selected>Select Node V...</option>
+                    <option value="0">MainGate</option>
+                    <option value="1">CS_Block</option>
+                    <option value="2">Library</option>
+                    <option value="3">Hostel</option>
+                    <option value="4">Cafeteria</option>
+                </select>
+
+                <input type="number" id="cost" placeholder="Edge Weight/Cost">
+                
+                <button type="button" class="action-btn" onclick="addEdge()">Add Edge</button>
+                <button type="button" class="action-btn optimize" onclick="runKruskal()">Find MST (Kruskal)</button>
+            </div>
+            <div class="output" id="networkOutput">Network data required.</div>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

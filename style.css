@@ -1,0 +1,98 @@
+body {
+margin: 0;
+font-family: 'Segoe UI', sans-serif;
+background: #0f172a;
+color: white;
+}
+
+.container {
+display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+width: 220px;
+height: 100vh;
+background: #020617;
+padding: 20px;
+box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+.sidebar h2 {
+text-align: center;
+margin-bottom: 30px;
+}
+
+.sidebar button {
+width: 100%;
+margin: 10px 0;
+padding: 10px;
+background: #1e293b;
+border: none;
+color: white;
+border-radius: 8px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.sidebar button:hover {
+background: #3b82f6;
+}
+
+/* Content */
+.content {
+flex: 1;
+padding: 40px;
+}
+
+/* Cards */
+.card {
+display: none;
+background: #1e293b;
+padding: 25px;
+border-radius: 15px;
+max-width: 450px;
+margin: auto;
+box-shadow: 0 0 25px rgba(59,130,246,0.3);
+}
+
+.card h2 {
+text-align: center;
+}
+
+/* Inputs */
+input, select {
+width: 100%;
+padding: 10px;
+margin: 8px 0;
+border-radius: 8px;
+border: none;
+}
+
+/* Buttons */
+button {
+width: 100%;
+padding: 10px;
+margin-top: 8px;
+border-radius: 8px;
+border: none;
+background: #22c55e;
+color: white;
+cursor: pointer;
+transition: 0.3s;
+}
+
+button:hover {
+background: #16a34a;
+}
+
+/* Output */
+.output {
+margin-top: 15px;
+padding: 10px;
+background: #020617;
+border-radius: 8px;
+min-height: 40px;
+font-size: 14px;
+color: #cbd5f5;
+}
